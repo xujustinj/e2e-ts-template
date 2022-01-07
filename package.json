@@ -9,9 +9,15 @@
   "version": "0.0.1",
   "license": "ISC",
   "private": true,
+  "workspaces": [
+    "server"
+  ],
   "scripts": {
+    "build": "npm run build --workspaces",
+    "check": "prettier --check .",
     "format": "prettier --write .",
-    "check": "prettier --check ."
+    "start:dev": "npm run start:dev --workspaces",
+    "start:prod": "npm run start:prod --workspaces"
   },
   "devDependencies": {
     "prettier": "2.5.1"
