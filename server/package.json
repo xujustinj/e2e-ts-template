@@ -11,10 +11,12 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "migration:create": "npx mikro-orm migration:create",
     "start:dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
     "start:prod": "node dist/index.js"
   },
   "dependencies": {
+    "@mikro-orm/cli": "^4.5.10",
     "@mikro-orm/core": "^4.5.10",
     "@mikro-orm/postgresql": "^4.5.10",
     "@mikro-orm/reflection": "^4.5.10",
@@ -27,5 +29,13 @@
     "concurrently": "^6.5.1",
     "nodemon": "^2.0.15",
     "ts-node": "^10.4.0"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "tsConfigPath": "./tsconfig.json",
+    "configPaths": [
+      "./src/data-mikro/mikro-orm.config.ts",
+      "./dist/data-mikro/mikro-orm.config.js"
+    ]
   }
 }
