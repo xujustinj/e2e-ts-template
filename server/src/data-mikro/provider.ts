@@ -4,7 +4,8 @@ import { Config } from "../config";
 import { DataProvider } from "../data";
 import { MikroThingEntity } from "./entities/thing.entity";
 import { MikroThingRepo } from "./repos/mikro-thing-repo";
-import { DBConfig, MikroOptions } from "./config";
+import { getMikroConfig } from "./config";
+import { setupMikroORM } from "./mikro-orm";
 
 export interface MikroDataProvider extends DataProvider {
   mikroORM: MikroORM;
@@ -16,11 +17,11 @@ export interface MikroDataProvider extends DataProvider {
   };
 }
 
-export async function mikroDataProvider(
+export async function setupMikroDataProvider(
   config: Config
 ): Promise<MikroDataProvider> {
-  const options = MikroOptions(DBConfig(config));
-  const mikroORM = await MikroORM.init(options);
+  const mikroConfig = getMikroConfig(config);
+  const mikroORM = await setupMikroORM(mikroConfig);
 
   const { em } = mikroORM;
   const mikroEntityRepos = {

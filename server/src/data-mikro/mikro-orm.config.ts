@@ -1,5 +1,6 @@
 import { config } from "../config";
-import { DBConfig, MikroOptions } from "./config";
+import { getMikroConfig } from "./config";
+import { getMikroOptions } from "./mikro-orm";
 
 // the migrations CLI requires an options object as a default export
-export default MikroOptions(DBConfig(config));
+export default getMikroOptions(getMikroConfig(config));
