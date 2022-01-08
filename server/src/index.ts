@@ -2,7 +2,7 @@ import cors from "cors";
 
 import { middleware, setupExpresstRPCAPIProvider } from "./api-express-trpc";
 import { config } from "./config";
-import { setupMikroDataProvider } from "./data-mikro";
+import { setupMikroDataProvider } from "./data-mikro-postgres";
 import { setupBaseServiceProvider } from "./service-base";
 
 async function main() {
