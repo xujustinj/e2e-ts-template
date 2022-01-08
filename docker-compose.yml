@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: postgresql
+    image: postgres:14.1-alpine3.15
+    environment:
+      POSTGRES_DB: ${DB_DATABASE_NAME:-app}
+      POSTGRES_USER: ${DB_USERNAME:-dev}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-sudo}
+      PG_DATA: /var/lib/postgresql/data
+    volumes:
+      - data:/var/lib/postgresql/data
+    ports:
+      - ${DB_PORT:-5432}:5432
+
+volumes:
+  data: # isolate DB data from potentially different OS
