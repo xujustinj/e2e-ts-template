@@ -14,5 +14,25 @@ services:
     ports:
       - ${DB_PORT:-5432}:5432
 
+  server:
+    container_name: server
+    build:
+      context: ./server
+    volumes:
+      - ./server/src:/usr/src/app/src
+      - /usr/src/app/node_modules # isolate container's node_modules
+    ports:
+      - ${SERVER_PORT:-8080}:${SERVER_PORT:-8080}
+    command: npm run start:dev
+    environment:
+      DB_HOST: postgres
+      DB_PORT: ${DB_PORT:-5432}
+      DB_DATABASE_NAME: ${DB_DATABASE_NAME:-app}
+      DB_USERNAME: ${DB_USERNAME:-dev}
+      DB_PASSWORD: ${DB_PASSWORD:-sudo}
+      SERVER_PORT: ${SERVER_PORT:-8080}
+    depends_on:
+      - db
+
 volumes:
   data: # isolate DB data from potentially different OS
