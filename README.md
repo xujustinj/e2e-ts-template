@@ -1,11 +1,6 @@
-# PERN Template
+# E2E TS App Template
 
-A template for any project using the PERN stack:
-
-- PostgreSQL
-- Express
-- React
-- Node.js
+A web application template with end-to-end types. The frontend and backend share overlapping Typescript types for safety even across a web API.
 
 ## Credits
 

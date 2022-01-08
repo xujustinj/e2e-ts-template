@@ -1,6 +1,6 @@
 {
-  "name": "pern-template",
-  "description": "Template web application using the PERN stack",
+  "name": "e2e-ts-app-template",
+  "description": "web app template with end-to-end types",
   "author": {
     "name": "Justin Xu",
     "email": "xu.justin.j@gmail.com",

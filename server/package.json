@@ -1,6 +1,6 @@
 {
-  "name": "pern-template-server",
-  "description": "Template Express server using PostgreSQL",
+  "name": "ts-backend-template",
+  "description": "fully-typed backend API server template",
   "author": {
     "name": "Justin Xu",
     "email": "xu.justin.j@gmail.com",
