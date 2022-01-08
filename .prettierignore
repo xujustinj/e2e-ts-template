@@ -6,3 +6,4 @@ node_modules/
 # server
 /server/dist/
 /server/src/data-mikro/migrations/Migration*.ts
+/server/tsconfig.json
