@@ -1,1 +1,1 @@
-// TODO
+export { mikroDataProvider, MikroDataProvider } from "./provider";
