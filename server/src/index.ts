@@ -1,16 +1,21 @@
-import { config, parser } from "./config";
+import cors from "cors";
+
+import { middleware, setupExpresstRPCAPIProvider } from "./api-express-trpc";
+import { config } from "./config";
 import { setupMikroDataProvider } from "./data-mikro";
 import { setupBaseServiceProvider } from "./service-base";
 
 async function main() {
   const dataProvider = await setupMikroDataProvider(config);
-  setupBaseServiceProvider(dataProvider);
-
-  const name = config.get("NAME", { fallback: "world" });
-  const port = config.parse("SERVER_PORT", parser.port);
-  console.log(
-    `Hello ${name}! This will eventually be the Express server on port ${port}.`
-  );
+  const serviceProvider = setupBaseServiceProvider(dataProvider);
+  const apiProvider = setupExpresstRPCAPIProvider(serviceProvider, config, {
+    extraMiddleware: [
+      cors(),
+      middleware.logRequest(),
+      middleware.mikroRequestContext(dataProvider.mikroORM.em),
+    ],
+  });
+  apiProvider.server.start();
 }
 
 main();
