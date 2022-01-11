@@ -34,5 +34,17 @@ services:
     depends_on:
       - db
 
+  client:
+    container_name: client
+    build:
+      context: ./client
+    ports:
+      - ${CLIENT_PORT:-3000}:${CLIENT_PORT:-3000}
+    command: npm run dev
+    environment:
+      PORT: ${CLIENT_PORT:-3000}
+    depends_on:
+      - server
+
 volumes:
   data: # isolate DB data from potentially different OS

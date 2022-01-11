@@ -1,0 +1,7 @@
+*.md
+/.dockerignore
+/.git/
+/.gitignore
+/.next/
+/Dockerfile
+/node_modules/
