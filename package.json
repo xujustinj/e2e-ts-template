@@ -10,6 +10,7 @@
   "license": "ISC",
   "private": true,
   "workspaces": [
+    "client",
     "server"
   ],
   "scripts": {

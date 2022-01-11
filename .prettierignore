@@ -4,6 +4,7 @@ node_modules/
 # pending https://github.com/prettier/prettier/issues/4081
 
 # client
+/client/.next/
 
 # server
 /server/dist/
