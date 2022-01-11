@@ -16,8 +16,8 @@ export function getMikroOptions(mikroConfig: MikroConfig): Options {
     driver: PostgreSqlDriver,
     debug: true, // process.env.NODE_ENV !== 'production'
     highlighter: new SqlHighlighter(),
-    entities: ["dist/data-mikro/entities/*.entity.js"],
-    entitiesTs: ["src/data-mikro/entities/*.entity.ts"], // path to TS entities (source), relative to `baseDir`
+    entities: ["dist/data-mikro-postgres/entities/*.entity.js"],
+    entitiesTs: ["src/data-mikro-postgres/entities/*.entity.ts"], // path to TS entities (source), relative to `baseDir`
     metadataProvider: TsMorphMetadataProvider,
     migrations: {
       disableForeignKeys: false,

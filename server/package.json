@@ -39,8 +39,8 @@
     "useTsNode": true,
     "tsConfigPath": "./tsconfig.json",
     "configPaths": [
-      "./src/data-mikro/mikro-orm.config.ts",
-      "./dist/data-mikro/mikro-orm.config.js"
+      "./src/data-mikro-postgres/mikro-orm.config.ts",
+      "./dist/data-mikro-postgres/mikro-orm.config.js"
     ]
   }
 }
