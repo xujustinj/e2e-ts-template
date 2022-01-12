@@ -1,1 +1,2 @@
-export { MikroDataProvider, setupMikroDataProvider } from "./provider";
+export type { MikroDataProvider } from "./provider";
+export { setupMikroDataProvider } from "./provider";

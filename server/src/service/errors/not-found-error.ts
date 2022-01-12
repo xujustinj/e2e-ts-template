@@ -1,4 +1,4 @@
-import { ThingQuery } from "../../model";
+import type { ThingQuery } from "../../model";
 import { ServiceError } from "./service-error";
 
 export class NotFoundServiceError<

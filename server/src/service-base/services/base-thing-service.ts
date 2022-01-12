@@ -1,12 +1,12 @@
 import { ThingNotFoundRepoError } from "../../data/errors";
-import { ThingRepo } from "../../data/repos";
-import { ID, Thing } from "../../model";
+import type { ThingRepo } from "../../data/repos";
+import type { ID, Thing } from "../../model";
 import {
   ThingNotFoundServiceError,
   UnexpectedServiceError,
 } from "../../service/errors";
-import { ThingService } from "../../service/services";
-import { ServiceResult } from "../../service/types";
+import type { ThingService } from "../../service/services";
+import type { ServiceResult } from "../../service/types";
 
 export class BaseThingService implements ThingService {
   constructor(protected readonly thingRepo: ThingRepo) {}

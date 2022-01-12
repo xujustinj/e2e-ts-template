@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { ThingService } from "../../service/services/thing-service";
+import type { ThingService } from "../../service/services/thing-service";
 import { trpcUnwrap } from "../utils/trpc-unwrap";
 import { router } from "../utils/router";
 

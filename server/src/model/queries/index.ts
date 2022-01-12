@@ -1,1 +1,1 @@
-export { ThingQuery, UniqueThingQuery } from "./thing-query";
+export type { ThingQuery, UniqueThingQuery } from "./thing-query";

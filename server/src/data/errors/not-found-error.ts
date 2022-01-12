@@ -1,4 +1,4 @@
-import { ThingQuery } from "../../model";
+import type { ThingQuery } from "../../model";
 import { RepoError } from "./repo-error";
 
 export class NotFoundRepoError<

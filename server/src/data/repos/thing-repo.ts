@@ -1,6 +1,6 @@
-import { Thing, ThingQuery, UniqueThingQuery, Values } from "../../model";
-import { ThingNotFoundRepoError } from "../errors";
-import { RepoResult } from "../types";
+import type { Thing, ThingQuery, UniqueThingQuery, Values } from "../../model";
+import type { ThingNotFoundRepoError } from "../errors";
+import type { RepoResult } from "../types";
 
 export interface ThingRepo {
   create(props: Values<Thing>): RepoResult<Thing>;

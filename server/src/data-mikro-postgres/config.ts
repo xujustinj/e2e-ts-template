@@ -1,4 +1,5 @@
-import { Config, parser } from "../config";
+import type { Config } from "../config";
+import { parser } from "../config";
 
 export function getMikroConfig(config: Config) {
   return {

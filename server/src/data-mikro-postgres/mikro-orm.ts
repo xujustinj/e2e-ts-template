@@ -1,10 +1,11 @@
-import { MikroORM, Options } from "@mikro-orm/core";
+import type { Options } from "@mikro-orm/core";
+import { MikroORM } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
 import path from "path";
 
-import { MikroConfig } from "./config";
+import type { MikroConfig } from "./config";
 
 export function getMikroOptions(mikroConfig: MikroConfig): Options {
   return {

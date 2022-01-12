@@ -1,1 +1,1 @@
-export { Thing } from "./thing";
+export type { Thing } from "./thing";

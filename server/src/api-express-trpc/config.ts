@@ -1,4 +1,5 @@
-import { Config, parser } from "../config";
+import type { Config } from "../config";
+import { parser } from "../config";
 
 export function getExpressConfig(config: Config) {
   return { port: config.parse("SERVER_PORT", parser.port) } as const;

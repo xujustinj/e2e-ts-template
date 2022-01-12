@@ -1,6 +1,6 @@
 import * as Mikro from "@mikro-orm/core";
 
-import { Thing } from "../../model";
+import type { Thing } from "../../model";
 import { BaseMikroEntity } from "./base-entity";
 
 @Mikro.Entity()

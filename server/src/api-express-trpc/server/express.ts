@@ -1,8 +1,8 @@
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import express from "express";
 
-import { APIRouter } from "../api";
-import { ExpressConfig } from "../config";
+import type { APIRouter } from "../api";
+import type { ExpressConfig } from "../config";
 import { createContext } from "../utils/context";
 
 export interface ExpressServerOptions {

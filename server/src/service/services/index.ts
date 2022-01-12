@@ -1,1 +1,1 @@
-export { ThingService } from "./thing-service";
+export type { ThingService } from "./thing-service";

@@ -1,8 +1,9 @@
-import { Config } from "../config";
-import { ServiceProvider } from "../service";
+import type { Config } from "../config";
+import type { ServiceProvider } from "../service";
 import { setupAPIRouter } from "./api";
 import { getExpressConfig } from "./config";
-import { ExpressServerOptions, setupExpressServer } from "./server";
+import type { ExpressServerOptions } from "./server";
+import { setupExpressServer } from "./server";
 
 export function setupExpresstRPCAPIProvider(
   service: ServiceProvider,

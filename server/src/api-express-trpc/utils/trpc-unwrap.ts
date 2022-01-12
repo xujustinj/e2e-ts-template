@@ -1,5 +1,5 @@
 import { TRPCError } from "@trpc/server";
-import { Result } from "typescript-monads";
+import type { Result } from "typescript-monads";
 
 import { NotFoundServiceError } from "../../service/errors";
 

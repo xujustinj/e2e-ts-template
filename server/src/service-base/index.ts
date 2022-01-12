@@ -1,1 +1,2 @@
-export { setupBaseServiceProvider, BaseServiceProvider } from "./provider";
+export type { BaseServiceProvider } from "./provider";
+export { setupBaseServiceProvider } from "./provider";

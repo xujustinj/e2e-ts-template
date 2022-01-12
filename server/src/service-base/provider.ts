@@ -1,5 +1,5 @@
-import { DataProvider } from "../data";
-import { ServiceProvider } from "../service";
+import type { DataProvider } from "../data";
+import type { ServiceProvider } from "../service";
 import { BaseThingService } from "./services";
 
 export interface BaseServiceProvider extends ServiceProvider {}

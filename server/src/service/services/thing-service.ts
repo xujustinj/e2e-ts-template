@@ -1,6 +1,6 @@
-import { ID, Thing } from "../../model";
-import { ThingNotFoundServiceError } from "../errors";
-import { ServiceResult } from "../types";
+import type { ID, Thing } from "../../model";
+import type { ThingNotFoundServiceError } from "../errors";
+import type { ServiceResult } from "../types";
 
 /**
  * Example CRUD service for Things

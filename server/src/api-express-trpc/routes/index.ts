@@ -1,1 +1,2 @@
-export { setupThingRouter, ThingRouter } from "./thing-router";
+export type { ThingRouter } from "./thing-router";
+export { setupThingRouter } from "./thing-router";

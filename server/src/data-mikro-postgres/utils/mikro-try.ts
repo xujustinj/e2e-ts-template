@@ -1,7 +1,8 @@
 import { Result } from "typescript-monads";
 
-import { RepoError, UnexpectedRepoError } from "../../data/errors";
-import { RepoResult } from "../../data/types";
+import type { RepoError } from "../../data/errors";
+import { UnexpectedRepoError } from "../../data/errors";
+import type { RepoResult } from "../../data/types";
 
 export async function mikroTry<T, Err extends RepoError>(
   action: () => Promise<Result<T, Err>>

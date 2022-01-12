@@ -1,6 +1,6 @@
 import { router as trpcRouter } from "@trpc/server";
 
-import { Context } from "./context";
+import type { Context } from "./context";
 
 export function router() {
   return trpcRouter<Context>();

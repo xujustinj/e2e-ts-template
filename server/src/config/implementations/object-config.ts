@@ -1,5 +1,5 @@
 import { ConfigMappingError, ConfigMissingError } from "../errors";
-import { Config, ConfigKey } from "../types";
+import type { Config, ConfigKey } from "../types";
 
 export class ObjectConfig<Value = string> implements Config<Value> {
   constructor(

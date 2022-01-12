@@ -1,11 +1,11 @@
 import { Result } from "typescript-monads";
-import { EntityRepository } from "@mikro-orm/core";
+import type { EntityRepository } from "@mikro-orm/core";
 
 import { ThingNotFoundRepoError, RepoError } from "../../data/errors";
-import { ThingRepo } from "../../data/repos";
-import { RepoResult } from "../../data/types";
-import { Thing, ThingQuery, UniqueThingQuery, Values } from "../../model";
-import { MikroThingEntity } from "../entities/thing.entity";
+import type { ThingRepo } from "../../data/repos";
+import type { RepoResult } from "../../data/types";
+import type { Thing, ThingQuery, UniqueThingQuery, Values } from "../../model";
+import type { MikroThingEntity } from "../entities/thing.entity";
 import { mikroTry } from "../utils/mikro-try";
 
 export class MikroThingRepo implements ThingRepo {
@@ -29,7 +29,7 @@ export class MikroThingRepo implements ThingRepo {
     });
   }
 
-  public async create(values: Values<Thing>): RepoResult<Thing> {
+  public async create(values: Values<Thing>): RepoResult<MikroThingEntity> {
     return mikroTry(async () => Result.ok(this.er.create(values)));
   }
 
@@ -42,7 +42,7 @@ export class MikroThingRepo implements ThingRepo {
   }
   public async readOne(
     query: ThingQuery
-  ): RepoResult<Thing, ThingNotFoundRepoError> {
+  ): RepoResult<MikroThingEntity, ThingNotFoundRepoError> {
     return this.findOneAnd(query, (thing) => Result.ok(thing));
   }
   public async readAll(query: ThingQuery): RepoResult<ReadonlyArray<Thing>> {
@@ -53,20 +53,20 @@ export class MikroThingRepo implements ThingRepo {
 
   public async updateThing(
     thing: Thing,
-    values: Partial<Values<Thing>>
+    values: Partial<Values<MikroThingEntity>>
   ): RepoResult<Thing> {
     return mikroTry(async () => Result.ok(this.er.assign(thing, values)));
   }
   public async updateWhere(
     query: UniqueThingQuery,
-    values: Partial<Values<Thing>>
+    values: Partial<Values<MikroThingEntity>>
   ): RepoResult<Thing, ThingNotFoundRepoError> {
     return this.findOneAnd(query, (thing) =>
       Result.ok(this.er.assign(thing, values))
     );
   }
 
-  public async deleteThing(thing: Thing): RepoResult<Values<Thing>> {
+  public async deleteThing(thing: Thing): RepoResult<Values<MikroThingEntity>> {
     return mikroTry(async () => {
       this.er.remove(thing);
       return Result.ok(thing);
@@ -74,7 +74,7 @@ export class MikroThingRepo implements ThingRepo {
   }
   public async deleteWhere(
     query: UniqueThingQuery
-  ): RepoResult<Values<Thing>, ThingNotFoundRepoError> {
+  ): RepoResult<Values<MikroThingEntity>, ThingNotFoundRepoError> {
     return this.findOneAnd(query, (thing) => {
       this.er.remove(thing);
       return Result.ok(thing);

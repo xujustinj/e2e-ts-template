@@ -1,7 +1,7 @@
-import { MikroORM, EntityRepository } from "@mikro-orm/core";
+import type { MikroORM, EntityRepository } from "@mikro-orm/core";
 
-import { Config } from "../config";
-import { DataProvider } from "../data";
+import type { Config } from "../config";
+import type { DataProvider } from "../data";
 import { MikroThingEntity } from "./entities/thing.entity";
 import { MikroThingRepo } from "./repos/mikro-thing-repo";
 import { getMikroConfig } from "./config";

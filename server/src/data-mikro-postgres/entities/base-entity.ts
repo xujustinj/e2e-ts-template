@@ -1,5 +1,5 @@
 import * as Mikro from "@mikro-orm/core";
-import { Entity } from "../../model";
+import type { Entity } from "../../model";
 
 export abstract class BaseMikroEntity implements Entity {
   @Mikro.PrimaryKey()
