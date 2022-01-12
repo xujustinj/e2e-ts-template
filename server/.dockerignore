@@ -5,3 +5,4 @@
 /dist/
 /Dockerfile
 /node_modules/
+/tsconfig.tsbuildinfo

@@ -10,3 +10,4 @@ node_modules/
 /server/dist/
 /server/src/data-mikro-postgres/migrations/Migration*.ts
 /server/tsconfig.json
+/server/tsconfig.tsbuildinfo
