@@ -5,10 +5,5 @@ WORKDIR /usr/src/app
 
 COPY package*.json .
 COPY client/package*.json ./client/
-COPY server/package*.json ./server/
+COPY server/package*.json server/tsconfig.json ./server/
 RUN npm install
-
-COPY . .
-RUN npm run build
-
-EXPOSE 3000
