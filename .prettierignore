@@ -1,4 +1,5 @@
 node_modules/
+package-lock.json
 
 # TODO: split this into multiple .prettierignore files in each subdirectory
 # pending https://github.com/prettier/prettier/issues/4081
