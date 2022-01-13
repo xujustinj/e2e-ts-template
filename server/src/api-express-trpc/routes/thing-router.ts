@@ -6,7 +6,7 @@ import { router } from "../utils/router";
 
 export function setupThingRouter(thingService: ThingService) {
   return router()
-    .mutation("create", {
+    .mutation(".create", {
       input: z.object({
         description: z.string(),
       }),
@@ -14,12 +14,12 @@ export function setupThingRouter(thingService: ThingService) {
         return trpcUnwrap(await thingService.create(description));
       },
     })
-    .query("read", {
+    .query(".read", {
       async resolve() {
         return { things: trpcUnwrap(await thingService.read()) };
       },
     })
-    .mutation("update", {
+    .mutation(".update", {
       input: z.object({
         id: z.number(),
         description: z.string(),
@@ -28,7 +28,7 @@ export function setupThingRouter(thingService: ThingService) {
         return trpcUnwrap(await thingService.update(id, description));
       },
     })
-    .mutation("delete", {
+    .mutation(".delete", {
       input: z.object({
         id: z.number(),
       }),

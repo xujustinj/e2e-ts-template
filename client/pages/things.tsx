@@ -5,10 +5,10 @@ import { trpc } from "../utils/trpc";
 
 const Things: NextPage = () => {
   // const utils = trpc.useContext();
-  const thingsQuery = trpc.useQuery(["thing/read"]);
-  // const createThing = trpc.useMutation("thing/create", {
+  const thingsQuery = trpc.useQuery(["things.read"]);
+  // const createThing = trpc.useMutation("things.create", {
   //   async onSuccess() {
-  //     await utils.invalidateQueries("thing/read");
+  //     await utils.invalidateQueries("things.read");
   //   },
   // });
 
