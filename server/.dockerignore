@@ -1,8 +1,0 @@
-*.md
-/.dockerignore
-/.git/
-/.gitignore
-/dist/
-/Dockerfile
-/node_modules/
-/tsconfig.tsbuildinfo

@@ -17,13 +17,13 @@ services:
   server:
     container_name: server
     build:
-      context: ./server
+      context: .
     volumes:
-      - ./server/src:/usr/src/app/src
-      - /usr/src/app/node_modules # isolate container's node_modules
+      - ./server/src:/usr/src/app/server/src
+      - /usr/src/app/node_modules # isolate node_modules
     ports:
       - ${SERVER_PORT:-8080}:${SERVER_PORT:-8080}
-    command: npm run start:dev
+    command: npm run --workspace=server start:dev
     environment:
       DB_HOST: postgres
       DB_PORT: ${DB_PORT:-5432}
@@ -36,11 +36,15 @@ services:
 
   client:
     container_name: client
-    build:
-      context: ./client
+    build: # same as server, but won't be built twice: https://github.com/docker/compose/issues/7343
+      context: .
+    volumes:
+      - ./client:/usr/src/app/client
+      - ./server/src:/usr/src/app/server/src
+      - /usr/src/app/node_modules # isolate node_modules
     ports:
       - ${CLIENT_PORT:-3000}:${CLIENT_PORT:-3000}
-    command: npm run dev
+    command: npm run --workspace=client dev
     environment:
       PORT: ${CLIENT_PORT:-3000}
     depends_on:

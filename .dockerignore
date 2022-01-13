@@ -1,0 +1,12 @@
+*.md
+.gitignore
+/.dockerignore
+/.git/
+/.prettierignore
+/.prettierrc
+/client/.eslintrc.json
+/client/.next/
+/docker-compose.yml
+/Dockerfile
+/server/tsconfig.tsbuildinfo
+node_modules/
