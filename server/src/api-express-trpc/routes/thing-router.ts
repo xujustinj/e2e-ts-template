@@ -16,9 +16,7 @@ export function setupThingRouter(thingService: ThingService) {
     })
     .query("read", {
       async resolve() {
-        return trpcUnwrap(await thingService.read()).map((things) => ({
-          things,
-        }));
+        return { things: trpcUnwrap(await thingService.read()) };
       },
     })
     .mutation("update", {
