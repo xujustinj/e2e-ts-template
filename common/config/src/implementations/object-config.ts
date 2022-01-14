@@ -1,6 +1,10 @@
 import { ConfigMappingError, ConfigMissingError } from "../errors";
 import type { Config, ConfigKey } from "../types";
 
+/**
+ * Extract configuration from an object like process.env
+ * Doesn't work in Next.js because environment variables are handled statically.
+ */
 export class ObjectConfig<Value = string> implements Config<Value> {
   constructor(
     protected readonly obj: Readonly<Record<ConfigKey, Value | undefined>>
@@ -19,7 +23,13 @@ export class ObjectConfig<Value = string> implements Config<Value> {
     }
   ): Value {
     const validate = options?.validate ?? ((value: Value) => value);
-    return this.parse(key, validate, options);
+    const fallback = options?.fallback;
+    const strict = options?.strict ?? true;
+    const result = this.tryParse(key, validate, strict) ?? fallback;
+    if (result === undefined) {
+      throw new ConfigMissingError(key);
+    }
+    return result;
   }
 
   public parse<T>(
