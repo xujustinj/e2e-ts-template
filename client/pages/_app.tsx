@@ -9,7 +9,7 @@ function App({ Component, pageProps }: AppProps) {
 export default withTRPC({
   config() {
     return {
-      url: "http://localhost:8080", // TODO: make this configurable
+      url: process.env.SERVER_URL!,
     };
   },
 })(App);
