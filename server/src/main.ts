@@ -1,7 +1,7 @@
+import config from "@xujustinj/common-config";
 import cors from "cors";
 
 import { middleware, setupExpresstRPCAPIProvider } from "./api-express-trpc";
-import { config } from "./config";
 import { setupMikroDataProvider } from "./data-mikro-postgres";
 import { setupBaseServiceProvider } from "./service-base";
 

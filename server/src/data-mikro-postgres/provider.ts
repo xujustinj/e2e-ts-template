@@ -1,6 +1,6 @@
 import type { MikroORM, EntityRepository } from "@mikro-orm/core";
+import type { Config } from "@xujustinj/common-config";
 
-import type { Config } from "../config";
 import type { DataProvider } from "../data";
 import { MikroThingEntity } from "./entities/thing.entity";
 import { MikroThingRepo } from "./repos/mikro-thing-repo";

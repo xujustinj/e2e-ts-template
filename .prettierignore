@@ -1,5 +1,8 @@
+dist/
 node_modules/
 package-lock.json
+tsconfig.json
+tsconfig.tsbuildinfo
 
 # TODO: split this into multiple .prettierignore files in each subdirectory
 # pending https://github.com/prettier/prettier/issues/4081
@@ -7,8 +10,7 @@ package-lock.json
 # client
 /client/.next/
 
+# common
+
 # server
-/server/dist/
 /server/src/data-mikro-postgres/migrations/Migration*.ts
-/server/tsconfig.json
-/server/tsconfig.tsbuildinfo

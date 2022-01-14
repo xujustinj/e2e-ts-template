@@ -1,4 +1,5 @@
-import { config } from "../config";
+import config from "@xujustinj/common-config";
+
 import { getMikroConfig } from "./config";
 import { getMikroOptions } from "./mikro-orm";
 

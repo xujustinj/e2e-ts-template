@@ -11,6 +11,7 @@
   "private": true,
   "workspaces": [
     "client",
+    "common/config",
     "server"
   ],
   "scripts": {

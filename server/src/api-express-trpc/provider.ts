@@ -1,4 +1,5 @@
-import type { Config } from "../config";
+import type { Config } from "@xujustinj/common-config";
+
 import type { ServiceProvider } from "../service";
 import { setupAPIRouter } from "./api";
 import { getExpressConfig } from "./config";
