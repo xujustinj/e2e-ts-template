@@ -10,6 +10,7 @@ export async function mikroTry<T, Err extends RepoError>(
   try {
     return await action();
   } catch (err: unknown) {
+    console.error(err);
     return Result.fail(new UnexpectedRepoError(err));
   }
 }

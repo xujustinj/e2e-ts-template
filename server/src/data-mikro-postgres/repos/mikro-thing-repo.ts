@@ -30,7 +30,11 @@ export class MikroThingRepo implements ThingRepo {
   }
 
   public async create(values: Values<Thing>): RepoResult<MikroThingEntity> {
-    return mikroTry(async () => Result.ok(this.er.create(values)));
+    return mikroTry(async () => {
+      const entity = this.er.create(values);
+      await this.er.persistAndFlush(entity);
+      return Result.ok(entity);
+    });
   }
 
   public async exists(query: ThingQuery): RepoResult<boolean> {
