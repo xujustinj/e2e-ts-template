@@ -48,6 +48,7 @@ services:
     environment:
       PORT: ${CLIENT_PORT:-3000}
       NEXT_PUBLIC_API_URL: ${API_URL:-http://localhost:8080}
+      SSR_API_URL: ${API_URL:-http://server:8080}
     depends_on:
       - server
 
